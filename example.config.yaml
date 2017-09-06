@@ -1,0 +1,25 @@
+server: irc.afternet.org
+nick: jamician
+prefix: '!'
+
+
+client:  # Options passed to the IRC client.
+  channels: ['#alakajam']
+  autoConnect: true
+  userName: Jamician
+  realName: Alakajam.com bot, AKA "Jamician"
+
+
+admin:  # Administration config.
+  users: []  # A list of friendly IRC users.
+  blockList: []  # A list of mean IRC users.
+  password: muffins  # A strong password.
+
+
+hype:  # Context data for the !hype command.
+  # The `!utc` causes them to be parsed as timezone-aware momentjs objects.
+  themeSelectionBegin: !utc '2017-09-08T20:00'
+  jamBegin: !utc '2017-09-22T20:00'
+  rankedJamEnd: !utc '2017-09-24T20:00'
+  unrankedJamEnd: !utc '2017-09-25T20:00'
+  votingEnd: !utc '2017-10-08T20:00'
