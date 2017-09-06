@@ -1,6 +1,6 @@
-server: irc.afternet.org
-nick: jamician
-prefix: '!'
+server: irc.afternet.org  # The server to connect to.
+nick: jamician  # The bot's nickname.
+prefix: '!'  # All commands will begin with this prefix.
 
 
 client:  # Options passed to the IRC client.
