@@ -18,7 +18,9 @@
     "irc": "^0.5.2",
     "js-yaml": "^3.9.1",
     "moment": "^2.18.1",
-    "nunjucks": "^3.0.1"
+    "nunjucks": "^3.0.1",
+    "request": "^2.81.0",
+    "request-promise-native": "^1.0.4"
   },
   "devDependencies": {
     "mocha": "^3.5.0"

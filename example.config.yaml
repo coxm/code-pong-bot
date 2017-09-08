@@ -16,6 +16,10 @@ admin:  # Administration config.
   password: muffins  # A strong password.
 
 
+api:
+  latestEntry: 'https://alakajam.com/api/user/{{user}}/latestEntry'
+
+
 hype:  # Context data for the !hype command.
   # The `!utc` causes them to be parsed as timezone-aware momentjs objects.
   themeSelectionBegin: !utc '2017-09-08T20:00'
