@@ -1,0 +1,38 @@
+env:
+  es6: true
+  node: true
+parserOptions:
+  ecmaVersion: 2017
+  sourceType: module
+  ecmaFeatures:
+extends: 'eslint:recommended'
+rules:
+  indent:
+    - error
+    - 2
+    - MemberExpression: 0
+  linebreak-style:
+    - error
+    - unix
+  quotes:
+    - error
+    - single
+    - {avoidEscape: true}
+  semi:
+    - error
+    - always
+  no-console: 0
+  eqeqeq:
+    - error
+    - always
+  no-alert: 1
+  no-caller: 1
+  no-eval: 1
+  no-extra-bind: 1
+  no-extra-label: 1
+  no-floating-decimal: 1
+  no-implicit-globals: 1
+  no-implied-eval: 1
+  no-lone-blocks: 1
+  no-loop-func: 1
+  no-case-declarations: 1

@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-const path = require('path');
-
 const irc = require('irc');
 
 const {server, nick, client: options} = require('./lib/env');
