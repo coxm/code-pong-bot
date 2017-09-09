@@ -7,3 +7,5 @@ Each of the following commands is supported. Remember to add the prefix when
 issuing them!
 
 -   `hype` displays a countdown to the next significant event.
+-   `find <user>` finds the most recent entry by a user.
+-   `roll [...dice]` rolls a number of dice.
