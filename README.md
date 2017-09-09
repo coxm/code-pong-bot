@@ -16,7 +16,7 @@ This will connect using the default configuration in [example.config.yaml](https
 The client created in `index.js` can be imported into the REPL and manipulated there. For example:
 
     $ node
-    > const client = require('./index');
+    > const client = require('.');
     > client.say('#alakajam', 'Abracadabra');
 
 ## Configuration

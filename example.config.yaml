@@ -16,8 +16,9 @@ admin:  # Administration config.
   password: muffins  # A strong password.
 
 
-api:
-  latestEntry: 'https://alakajam.com/api/user/{{user}}/latestEntry'
+api:  # API endpoints, listed by command.
+  hype: 'https://alakajam.com/api/featuredEvent'
+  find: 'https://alakajam.com/api/user/{{user}}/latestEntry'
 
 
 hype:  # Context data for the !hype command.
