@@ -21,7 +21,8 @@
     "moment": "^2.18.1",
     "nunjucks": "^3.0.1",
     "request": "^2.81.0",
-    "request-promise-native": "^1.0.4"
+    "request-promise-native": "^1.0.4",
+    "roll": "^1.2.0"
   },
   "devDependencies": {
     "eslint": "^4.6.1",
