@@ -5,7 +5,8 @@ An IRC bot for [alakajam.com](alakajam.com).
 See the [commands documentation](https://github.com/alakajam-team/alakajam-irc/blob/master/docs/commands.md).
 
 ## Quick start
-The bot can be started by running:
+
+Requires Node 8. The bot can be started by running:
 
     npm install
     npm start
