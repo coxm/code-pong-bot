@@ -4,6 +4,7 @@
   "description": "An IRC bot",
   "main": "index.js",
   "scripts": {
+    "precommit": "npm run lint",
     "start": "node index.js",
     "lint": "./node_modules/eslint/bin/eslint.js -c .eslintrc.yaml index.js lib/*.js"
   },
@@ -26,6 +27,7 @@
   },
   "devDependencies": {
     "eslint": "^4.6.1",
+    "husky": "^0.14.3",
     "mocha": "^3.5.0"
   }
 }

@@ -37,3 +37,4 @@ rules:
   no-lone-blocks: 1
   no-loop-func: 1
   no-case-declarations: 1
+  prefer-const: 1
