@@ -17,8 +17,9 @@ admin:  # Administration config.
 
 
 api:  # API endpoints, listed by command.
-  countdown: 'https://alakajam.com/api/featuredEvent'
-  latestEntry: 'https://alakajam.com/api/user/{{user}}/latestEntry'
+  timeleft: &featuredEvent 'https://alakajam.com/api/featuredEvent'
+  panic: *featuredEvent
+  find: 'https://alakajam.com/api/user/{{user}}/latestEntry'
 
 
 commands:
