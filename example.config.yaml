@@ -35,4 +35,7 @@ commands:
   random:
     pending: "{{event.title}} has not started yet"
     empty: "No entries for {{event.title}}"
-    entry: "Random entry for {{event.title|safe}}: '{{entry.title|safe}}' by{% set sep = joiner() %}{% for user in entry.users %}{{sep()}} {{user.title|safe}}{% endfor %}  https://alakajam.com/{{entry.event_name}}/{{entry.id}}"
+    entry: >
+      Random entry for {{event.title|safe}}: '{{entry.title|safe}}'
+      by {{ entry.users | join(', ','title') | safe }}:
+      https://alakajam.com/{{entry.event_name}}/{{entry.id}}
