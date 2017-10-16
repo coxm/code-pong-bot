@@ -19,6 +19,7 @@ admin:  # Administration config.
 api:  # API endpoints, listed by command.
   timeleft: &featuredEvent 'https://alakajam.com/api/featuredEvent'
   panic: *featuredEvent
+  random: *featuredEvent
   find: 'https://alakajam.com/api/user/{{user}}/latestEntry'
 
 
@@ -31,3 +32,10 @@ commands:
       - "{{time}} left to perfect your masterpiece!"
       - "{{time}} left. PANIC! \\D:/"
       - "Dreams will be crushed in {{time}} and counting."
+  random:
+    pending: "{{event.title}} has not started yet"
+    empty: "No entries for {{event.title}}"
+    entry: >
+      Random entry for {{event.title|safe}}: '{{entry.title|safe}}'
+      by {{ entry.users | join(', ','title') | safe }}:
+      https://alakajam.com/{{entry.event_name}}/{{entry.id}}
