@@ -20,6 +20,7 @@ api:  # API endpoints, listed by command.
   timeleft: &featuredEvent 'https://alakajam.com/api/featuredEvent'
   panic: *featuredEvent
   random: *featuredEvent
+  theme: *featuredEvent
   find: 'https://alakajam.com/api/user/{{user}}/latestEntry'
 
 
