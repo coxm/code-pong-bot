@@ -45,5 +45,5 @@ by the specified prefix).
 -   `baton`: returns a message describing who has the baton and when they
     grabbed it.
 
--   `gimme [username]`: attempts to grab the baton for the specified user
+-   `gimme`: attempts to grab the baton for the specified user
     (defaults to the message sender's IRC nick).
