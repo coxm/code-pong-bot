@@ -1,7 +1,7 @@
 {
-  "name": "alakajam-irc",
+  "name": "code-pong-bot",
   "version": "0.0.0",
-  "description": "An IRC bot",
+  "description": "An IRC bot and HTTP server for code pong",
   "main": "index.js",
   "scripts": {
     "precommit": "npm run lint",
@@ -9,25 +9,24 @@
     "lint": "./node_modules/eslint/bin/eslint.js -c .eslintrc.yaml index.js lib/*.js"
   },
   "keywords": [
-    "IRC",
+    "code",
+    "pong",
+    "golf",
+    "irc",
     "bot",
-    "typescript"
+    "server"
   ],
   "author": "coxm <coxm@users.noreply.github.com>",
   "license": "GPL-3.0+",
   "dependencies": {
     "cli-color": "^1.2.0",
+    "express": "^4.16.3",
     "irc": "^0.5.2",
-    "js-yaml": "^3.9.1",
-    "moment": "^2.18.1",
-    "nunjucks": "^3.0.1",
-    "request": "^2.81.0",
-    "request-promise-native": "^1.0.4",
-    "roll": "^1.2.0"
+    "knex": "^0.15.2",
+    "moment": "^2.22.2",
+    "pg": "^7.4.3"
   },
   "devDependencies": {
-    "eslint": "^4.6.1",
-    "husky": "^0.14.3",
-    "mocha": "^3.5.0"
+    "eslint": "^5.6.0"
   }
 }

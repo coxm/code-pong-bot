@@ -4,14 +4,13 @@ env:
 parserOptions:
   ecmaVersion: 2017
   sourceType: module
-  ecmaFeatures:
-    experimentalObjectRestSpread: true
+  ecmaVersion: 7
 extends: 'eslint:recommended'
 rules:
   indent:
     - error
     - 2
-    - MemberExpression: 0
+    - MemberExpression: 1
       SwitchCase: 1
   linebreak-style:
     - error
