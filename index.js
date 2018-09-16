@@ -33,13 +33,12 @@ api.post('/baton/gimme', async (req, res) => {
     res.status(400).send('Empty request body');
     return;
   }
+  console.log('Gimme: user=%s, time=%s', req.body.user, req.body.time);
   if (!util.isValidUserName(req.body.user)) {
-    console.log('Invalid username', req.body.user);
     res.status(400).send('Invalid username');
     return;
   }
   const datetime = moment(req.body.time);
-  console.log('Time', typeof req.body.time, req.body.time);
   if (!datetime.isValid()) {
     res.status(400).send('Date/time must be in ISO8601 format');
     return;
