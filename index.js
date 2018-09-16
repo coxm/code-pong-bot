@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const express = require('express');
-const moment = require('moment');
+const isValidDate = require('date-fns/is_valid');
+const parseDate = require('date-fns/parse');
 
 const env = exports.env = require('./lib/env');
 const util = exports.util = require('./lib/util');
@@ -38,8 +39,8 @@ api.post('/baton/gimme', async (req, res) => {
     res.status(400).send('Invalid username');
     return;
   }
-  const datetime = moment(req.body.time);
-  if (!datetime.isValid()) {
+  const datetime = parseDate(req.body.time);
+  if (!isValidDate(datetime)) {
     res.status(400).send('Date/time must be in ISO8601 format');
     return;
   }
