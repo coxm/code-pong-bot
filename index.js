@@ -2,11 +2,11 @@
 const express = require('express');
 const moment = require('moment');
 
-const env = require('./lib/env');
-const util = require('./lib/util');
-const bot = require('./lib/bot');
-const db = require('./lib/db');
-const middleware = require('./lib/api/middleware');
+const env = exports.env = require('./lib/env');
+const util = exports.util = require('./lib/util');
+const bot = exports.bot = require('./lib/bot');
+const db = exports.db = require('./lib/db');
+const middleware = exports.middleware = require('./lib/api/middleware');
 
 
 const api = express();

@@ -18,8 +18,9 @@ The bot will attempt to connect to the IRC network and channels specified in
 `config.json`.
 
 ## REPL
-The client created in `index.js` can be imported into the REPL and manipulated there. For example:
+The IRC client created in `lib/bot/index.js` can be imported into the REPL and
+manipulated there. For example:
 
     $ node
-    > const client = require('.');
-    > client.say('#channel', 'Hello world!');
+    > const bot = require('.').bot;
+    > bot.say('#channel', 'Hello world!');
