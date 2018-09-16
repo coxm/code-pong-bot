@@ -11,8 +11,9 @@ The following endpoints are available. All dates must be in UTC form.
         {
             // The user name, or null if nobody has the baton.
             user: string | null
-            // The time the baton was last modified (grabbed or returned).
-            time: ISO8601-UTC-date-string | null
+            // The time the baton was last modified (grabbed or returned), as
+            // an ISO8601 UTC time string.
+            time: string | null
         }
 
 -   POST  `/baton/gimme`: attempts to grab the baton for a specified user.
