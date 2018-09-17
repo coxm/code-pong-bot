@@ -9,9 +9,12 @@ See the [specification document](./spec/README.md).
 Create a configuration file, `config.json`, analogous to `example.config.json`
 (`config.json` is _not_ tracked by Git).
 
+Set up a Postgres database and a user with access to the database using
+credentials from the `config.json`.
+
 The bot and server can then be started by running:
 
-    npm install
+    npm run postdeploy
     npm start
 
 The bot will attempt to connect to the IRC network and channels specified in
