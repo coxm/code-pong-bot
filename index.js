@@ -34,23 +34,15 @@ api.post('/baton/gimme', async (req, res) => {
     res.status(400).send('Empty request body');
     return;
   }
-  console.log('Gimme: user=%s, time=%s', req.body.user, req.body.time);
   if (!util.isValidUserName(req.body.user)) {
     res.status(400).send('Invalid username');
     return;
   }
-  const datetime = parseDate(req.body.time);
-  if (!isValidDate(datetime)) {
-    res.status(400).send('Date/time must be in ISO8601 format');
-    return;
-  }
+  console.log('Give baton to %s', req.body.user);
 
   let result = null;
   try {
-    result = await db.gimme({
-      user: req.body.user,
-      time: datetime.toISOString(),
-    });
+    result = await db.gimme({user: req.body.user});
   }
   catch (err) {
     console.error('ERROR: gimme failed:', err && err.message);
@@ -65,6 +57,34 @@ api.post('/baton/gimme', async (req, res) => {
 });
 
 
+/**
+ * Format a commit message.
+ *
+ * @param {object} body the body parameters.
+ * @param {string} body.user the user making the commit.
+ * @param {string} body.message the commit message.
+ * @param {string} body.url the url of the committed code.
+ * @param {?(Array[string] | string)} append optional message to append.
+ */
+const formatCommitMessage = (body, append) => {
+  if (typeof body !== 'object') {
+    body = {};
+  }
+  const fragments = [
+    typeof body.user === 'string' ? body.user : 'Someone',
+    'made a change',
+  ];
+  if (typeof body.message === 'string') {
+    fragments.push(`(${body.message})`);
+  }
+  if (typeof body.url === 'string') {
+    fragments.push(`at ${body.url}`);
+  }
+  // Allows for string or array.
+  return (append ? fragments.concat(append) : fragments).join(' ');
+};
+
+
 api.post('/baton/release', async (req, res) => {
   try {
     await db.release();
@@ -75,8 +95,14 @@ api.post('/baton/release', async (req, res) => {
     return;
   }
 
+  ircReport(formatCommitMessage(req.body, 'and has finished ponging'));
   res.sendStatus(204);
-  ircReport('The baton has been released!');
+});
+
+
+api.post('/notify/commit', async (req, res) => {
+  ircReport(formatCommitMessage(req.body));
+  res.sendStatus(204);
 });
 
 
