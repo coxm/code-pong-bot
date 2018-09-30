@@ -86,8 +86,9 @@ const formatCommitMessage = (body, append) => {
 
 
 api.post('/baton/release', async (req, res) => {
+  let changed = false;
   try {
-    await db.release();
+    changed = await db.release();
   }
   catch (err) {
     console.error('ERROR: release failed:', err && err.message);
@@ -96,7 +97,7 @@ api.post('/baton/release', async (req, res) => {
   }
 
   ircReport(formatCommitMessage(req.body, 'and has finished ponging'));
-  res.sendStatus(204);
+  res.json({changed});
 });
 
 
