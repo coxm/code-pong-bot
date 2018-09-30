@@ -30,5 +30,8 @@
     "migrations": {
       "tableName": "knex_migrations"
     }
+  },
+  "gitServer": {
+    "grabUrl": "https://post-to-this.when-baton-grabb.ed?user=__USER__"
   }
 }
