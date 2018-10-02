@@ -35,6 +35,27 @@ The following endpoints are available. All dates must be in UTC form.
     announcement.
 
 -   POST `/baton/release`: attempts to release the baton from the current user.
+    Requires a JSON body of the form
+
+        {
+            // The user making the commit.
+            user: string
+            // The commit message.
+            message: string
+            // The URL at which the changes can be viewed.
+            url: string
+        }
+
+    Returns a JSON body of the form
+
+        {
+            // Whether the baton was just released (i.e. false if the baton was
+            // already released before the request).
+            changed: boolean
+        }
+
+-   POST `/notify/commit`: notify the IRC channel that a commit has been made.
+    Requires a JSON body of the same form as `/baton/release`.
     Returns an empty 204 response.
 
 
