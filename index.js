@@ -35,6 +35,7 @@ api.post('/baton/gimme', async (req, res) => {
     return;
   }
   if (!util.isValidUserName(req.body.user)) {
+    console.log('Invalid username: "%s"', req.body.user);
     res.status(400).send('Invalid username');
     return;
   }
@@ -42,7 +43,7 @@ api.post('/baton/gimme', async (req, res) => {
 
   let result = null;
   try {
-    result = await db.gimme({user: req.body.user});
+    result = await db.gimme({ponger: req.body.user});
   }
   catch (err) {
     console.error('ERROR: gimme failed:', err && err.message);
