@@ -24,7 +24,7 @@ const ircReport = message => {
 
 
 api.get('/baton', async (req, res) => {
-  res.json(await db.baton());
+  res.json(await db.status());
 });
 
 
