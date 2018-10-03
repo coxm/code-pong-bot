@@ -97,7 +97,7 @@ api.post('/baton/release', async (req, res) => {
     return;
   }
 
-  ircReport(formatCommitMessage(req.body, 'and has finished ponging'));
+  ircReport(formatCommitMessage(req.body, 'and released the baton!'));
   res.json({changed});
 });
 
